@@ -1,0 +1,558 @@
+<html>
+<head>
+<style>
+body {
+  font-family: Verdana, sans-serif;
+}
+</style>
+</head>
+<body>
+<h4>Calculate the habitable temperature zone around a binary star</h4>
+Based on binary habitability python script by <a href="https://github.com/HDE226868/Binary-habitability">HDE226868</a>.
+<br><br>
+<table>
+    <tr>
+        <td>
+            <label>Primary Star Type </label>
+        </td>
+        <td>
+            <select id="selecta">
+                <option>O3V    </option>
+                <option>O4V    </option>
+                <option>O5V    </option>
+                <option>O5.5V  </option>
+                <option>O6V    </option>
+                <option>O6.5V  </option>
+                <option>O7V    </option>
+                <option>O7.5V  </option>
+                <option>O8V    </option>
+                <option>O8.5V  </option>
+                <option>O9V    </option>
+                <option>O9.5V  </option>
+                <option>B0V    </option>
+                <option>B0.5V  </option>
+                <option>B1V    </option>
+                <option>B1.5V  </option>
+                <option>B2V    </option>
+                <option>B2.5V  </option>
+                <option>B3V    </option>
+                <option>B4V    </option>
+                <option>B5V    </option>
+                <option>B6V    </option>
+                <option>B7V    </option>
+                <option>B8V    </option>
+                <option>B9V    </option>
+                <option>B9.5V  </option>
+                <option>A0V    </option>
+                <option>A1V    </option>
+                <option>A2V    </option>
+                <option>A3V    </option>
+                <option>A4V    </option>
+                <option>A5V    </option>
+                <option>A6V    </option>
+                <option>A7V    </option>
+                <option>A8V    </option>
+                <option>A9V    </option>
+                <option>F0V    </option>
+                <option>F1V    </option>
+                <option>F2V    </option>
+                <option>F3V    </option>
+                <option>F4V    </option>
+                <option>F5V    </option>
+                <option>F6V    </option>
+                <option>F7V    </option>
+                <option>F8V    </option>
+                <option>F9V    </option>
+                <option>G0V    </option>
+                <option>G1V    </option>
+                <option selected="selected">G2V    </option>
+                <option>G3V    </option>
+                <option>G4V    </option>
+                <option>G5V    </option>
+                <option>G6V    </option>
+                <option>G7V    </option>
+                <option>G8V    </option>
+                <option>G9V    </option>
+                <option>K0V    </option>
+                <option>K0.5V  </option>
+                <option>K1V    </option>
+                <option>K1.5V  </option>
+                <option>K2V    </option>
+                <option>K2.5V  </option>
+                <option>K3V    </option>
+                <option>K3.5V  </option>
+                <option>K4V    </option>
+                <option>K4.5V  </option>
+                <option>K5V    </option>
+                <option>K5.5V  </option>
+                <option>K6V    </option>
+                <option>K6.5V  </option>
+                <option>K7V    </option>
+                <option>K8V    </option>
+                <option>K9V    </option>
+                <option>M0V    </option>
+                <option>M0.5V  </option>
+                <option>M1V    </option>
+                <option>M1.5V  </option>
+                <option>M2V    </option>
+                <option>M2.5V  </option>
+                <option>M3V    </option>
+                <option>M3.5V  </option>
+                <option>M4V    </option>
+                <option>M4.5V  </option>
+                <option>M5V    </option>
+                <option>M5.5V  </option>
+                <option>M6V    </option>
+                <option>M6.5V  </option>
+                <option>M7V    </option>
+                <option>M7.5V  </option>
+                <option>M8V    </option>
+                <option>M8.5V  </option>
+                <option>M9V    </option>
+                <option>M9.5V  </option>
+                <option>L0V    </option>
+                <option>L1V    </option>
+                <option>L2V    </option>
+                <option>L3V    </option>
+                <option>L4V    </option>
+                <option>L5V    </option>
+                <option>L6V    </option>
+                <option>L7V    </option>
+                <option>L8V    </option>
+                <option>L9V    </option>
+                <option>T0V    </option>
+                <option>T1V    </option>
+                <option>T2V    </option>
+                <option>T3V    </option>
+                <option>T4V    </option>
+                <option>T4.5V  </option>
+                <option>T5V    </option>
+                <option>T5.5V  </option>
+                <option>T6V    </option>
+                <option>T7V    </option>
+                <option>T7.5V  </option>
+                <option>T8V    </option>
+                <option>T8.5V  </option>
+                <option>T9V    </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Secondary Star Type </label>
+        </td>
+        <td>
+            <select id="selectb" value="T9V">
+                <option>O3V    </option>
+                <option>O4V    </option>
+                <option>O5V    </option>
+                <option>O5.5V  </option>
+                <option>O6V    </option>
+                <option>O6.5V  </option>
+                <option>O7V    </option>
+                <option>O7.5V  </option>
+                <option>O8V    </option>
+                <option>O8.5V  </option>
+                <option>O9V    </option>
+                <option>O9.5V  </option>
+                <option>B0V    </option>
+                <option>B0.5V  </option>
+                <option>B1V    </option>
+                <option>B1.5V  </option>
+                <option>B2V    </option>
+                <option>B2.5V  </option>
+                <option>B3V    </option>
+                <option>B4V    </option>
+                <option>B5V    </option>
+                <option>B6V    </option>
+                <option>B7V    </option>
+                <option>B8V    </option>
+                <option>B9V    </option>
+                <option>B9.5V  </option>
+                <option>A0V    </option>
+                <option>A1V    </option>
+                <option>A2V    </option>
+                <option>A3V    </option>
+                <option>A4V    </option>
+                <option>A5V    </option>
+                <option>A6V    </option>
+                <option>A7V    </option>
+                <option>A8V    </option>
+                <option>A9V    </option>
+                <option>F0V    </option>
+                <option>F1V    </option>
+                <option>F2V    </option>
+                <option>F3V    </option>
+                <option>F4V    </option>
+                <option>F5V    </option>
+                <option>F6V    </option>
+                <option>F7V    </option>
+                <option>F8V    </option>
+                <option>F9V    </option>
+                <option>G0V    </option>
+                <option>G1V    </option>
+                <option>G2V    </option>
+                <option>G3V    </option>
+                <option>G4V    </option>
+                <option>G5V    </option>
+                <option>G6V    </option>
+                <option>G7V    </option>
+                <option>G8V    </option>
+                <option>G9V    </option>
+                <option>K0V    </option>
+                <option>K0.5V  </option>
+                <option>K1V    </option>
+                <option>K1.5V  </option>
+                <option>K2V    </option>
+                <option>K2.5V  </option>
+                <option>K3V    </option>
+                <option>K3.5V  </option>
+                <option>K4V    </option>
+                <option>K4.5V  </option>
+                <option>K5V    </option>
+                <option>K5.5V  </option>
+                <option>K6V    </option>
+                <option>K6.5V  </option>
+                <option>K7V    </option>
+                <option>K8V    </option>
+                <option>K9V    </option>
+                <option>M0V    </option>
+                <option>M0.5V  </option>
+                <option>M1V    </option>
+                <option>M1.5V  </option>
+                <option>M2V    </option>
+                <option>M2.5V  </option>
+                <option>M3V    </option>
+                <option>M3.5V  </option>
+                <option>M4V    </option>
+                <option>M4.5V  </option>
+                <option>M5V    </option>
+                <option>M5.5V  </option>
+                <option>M6V    </option>
+                <option>M6.5V  </option>
+                <option>M7V    </option>
+                <option>M7.5V  </option>
+                <option>M8V    </option>
+                <option>M8.5V  </option>
+                <option>M9V    </option>
+                <option>M9.5V  </option>
+                <option>L0V    </option>
+                <option>L1V    </option>
+                <option>L2V    </option>
+                <option>L3V    </option>
+                <option>L4V    </option>
+                <option>L5V    </option>
+                <option>L6V    </option>
+                <option>L7V    </option>
+                <option>L8V    </option>
+                <option>L9V    </option>
+                <option>T0V    </option>
+                <option>T1V    </option>
+                <option>T2V    </option>
+                <option>T3V    </option>
+                <option>T4V    </option>
+                <option>T4.5V  </option>
+                <option>T5V    </option>
+                <option>T5.5V  </option>
+                <option>T6V    </option>
+                <option>T7V    </option>
+                <option>T7.5V  </option>
+                <option>T8V    </option>
+                <option>T8.5V  </option>
+                <option selected="selected">T9V    </option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Star Separation (AU) </td>
+        <td>
+            <input id="separation" type="number" min="1" max="50" value="5">
+        </td>
+    </tr>
+    <tr>
+        <td>Planetary albedo (%) </td>
+        <td>
+            <input id="albedo" type="number" min="0" max="100" value="30">
+        </td>
+    </tr>
+    <tr>
+        <td>Greenhouse effect (%) </td>
+        <td>
+            <input id="geffect" type="number" min="0" max="100" value="78">
+        </td>
+    </tr>
+    <tr>
+        <td>Temperature map size (AU) </td>
+        <td>
+            <input id="mapsize" type="number" min="1" max="50" value="10">
+        </td>
+    </tr>
+    <tr>
+        <td>Map max temperature (K) </td>
+        <td>
+            <input id="tempmax" type="number" min="300" max="380" value="350">
+        </td>
+    </tr>
+    <tr>
+        <td>Map min temperature (K) </td>
+        <td>
+            <input id="tempmin" type="number" min="200" max="280" value="250">
+        </td>
+    </tr>
+</table>
+<br>
+The temperature range goes from red max temperature to blue min temperature.
+<br><br>
+The primary star is in the center of the map. The secondary star is to the right at separation distance.
+<br><br>
+<button id="btn">Compute</button>
+<br><br>
+<table width="512">
+    <tr>
+        <td>X </td>
+        <td id="mapx" width="32"></td>
+	    <td>Y </td>
+        <td id="mapy" width="32"></td>
+        <td>Distance (AU) </td>
+        <td id="mapr" width="32"></td>
+	    <td>Temperature (K) </td>
+        <td id="mapv" width="32"></td>
+    </tr>
+</table>
+<canvas id="canvas" width="512" height="512" style="border:1px solid #000000;"></canvas>
+
+<script>
+const loglum = new Float64Array([
+ 5.80,
+ 5.67,
+ 5.58,
+ 5.46,
+ 5.37,
+ 5.24,
+ 5.17,
+ 5.05,
+ 4.99,
+ 4.87,
+ 4.82,
+ 4.76,
+ 4.70,
+ 4.47,
+ 4.13,
+ 3.89,
+ 3.38,
+ 3.10,
+ 2.96,
+ 2.91,
+ 2.80,
+ 2.54,
+ 2.49,
+ 2.27,
+ 1.79,
+ 1.73,
+ 1.54,
+ 1.41,
+ 1.33,
+ 1.29,
+ 1.20,
+ 1.16,
+ 1.14,
+ 1.06,
+ 0.97,
+ 0.97,
+ 0.89,
+ 0.77,
+ 0.70,
+ 0.67,
+ 0.61,
+ 0.54,
+ 0.43,
+ 0.36,
+ 0.31,
+ 0.26,
+ 0.14,
+ 0.13,
+ 0.01,
+-0.01,
+-0.04,
+-0.05,
+-0.11,
+-0.12,
+-0.17,
+-0.25,
+-0.33,
+-0.33,
+-0.36,
+-0.39,
+-0.47,
+-0.51,
+-0.58,
+-0.64,
+-0.67,
+-0.68,
+-0.78,
+-0.84,
+-0.90,
+-0.96,
+-0.98,
+-1.10,
+-1.18,
+-1.20,
+-1.27,
+-1.40,
+-1.47,
+-1.57,
+-1.68,
+-1.78,
+-2.07,
+-2.20,
+-2.31,
+-2.52,
+-2.79,
+-3.02,
+-3.09,
+-3.21,
+-3.29,
+-3.36,
+-3.44,
+-3.57,
+-3.55,
+-3.57,
+-3.70,
+-3.84,
+-3.98,
+-4.11,
+-4.24,
+-4.36,
+-4.46,
+-4.55,
+-4.61,
+-4.66,
+-4.69,
+-4.73,
+-4.77,
+-4.84,
+-4.90,
+-4.95,
+-5.04,
+-5.12,
+-5.37,
+-5.54,
+-5.71,
+-5.93,
+-6.15]);
+
+const sa = document.getElementById('selecta');
+const sb = document.getElementById('selectb');
+const se = document.getElementById('separation');
+const ab = document.getElementById('albedo');
+const ge = document.getElementById('geffect');
+const ms = document.getElementById('mapsize');
+const tn = document.getElementById('tempmin');
+const tx = document.getElementById('tempmax');
+
+const btn = document.getElementById("btn");
+const mapx = document.getElementById('mapx');
+const mapy = document.getElementById('mapy');
+const mapr = document.getElementById('mapr');
+const mapv = document.getElementById('mapv');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+function compute() {
+  const image = ctx.createImageData(512, 512);
+  const data = image.data;
+
+  const luma = 10 ** loglum[sa.selectedIndex];
+  const lumb = 10 ** loglum[sb.selectedIndex];
+  const sep = parseFloat(se.value);
+  const albedo = parseFloat(ab.value) / 100.0;
+  const geffect = parseFloat(ge.value) / 100.0;
+  const scale = parseFloat(ms.value) / 512.0;
+  const tmin = parseFloat(tn.value);
+  const tmax = parseFloat(tx.value);
+
+  //const lsun = 3.838E26;
+  //const sig = 5.67E-8;
+  //const au = 1.496E11;
+  //const cs = lsun / (16 * pi * au * au * sig);
+  const cs = 6.01712272035E9;
+  const co = cs * (1.0 - albedo) / (1.0 - geffect * 0.5);
+  const ca = luma * co;
+  const cb = lumb * co;
+
+  const tr = tmax;
+  const tg = (tmin + tmax) / 2;
+  const tb = tmin;
+  const tmin4 = tmin ** 4;
+  const tmax4 = tmax ** 4;
+  const ts = 1020 / (tmax - tmin);
+
+  for (let i = 0; i < 256; i++) {
+    const y = (i - 255.5) * scale;
+    const y2 = y * y;
+    for (let j = 0; j < 512; j++) {
+      const xa = (j - 255.5) * scale;
+      const xb = xa - sep;
+      const ra2 = xa * xa + y2;
+      const rb2 = xb * xb + y2;
+      const t4 = ca / ra2 + cb / rb2;
+      if (t4 < tmax4 && t4 > tmin4) {
+        const t = t4 ** (1/4);
+        const r = 510.0 - ts * Math.abs(t - tr);
+        const g = 510.0 - ts * Math.abs(t - tg);
+        const b = 510.0 - ts * Math.abs(t - tb);
+        const n = (i * 512 + j) * 4;
+        const m = ((511 - i) * 512 + j) * 4;
+        data[n] = r;
+        data[n+1] = g;
+        data[n+2] = b;
+        data[n+3] = 255;
+        data[m] = r;
+        data[m+1] = g;
+        data[m+2] = b;
+        data[m+3] = 255;
+      }
+    }
+  }
+
+  ctx.putImageData(image, 0, 0);
+}
+
+function pick(event) {
+  const scale = parseFloat(ms.value) / 512.0;
+  const rect = canvas.getBoundingClientRect();
+  const cx = event.clientX - rect.left;
+  const cy = event.clientY - rect.top;
+  const x = cx - 255.5;
+  const y = cy - 255.5;
+  const d = scale * Math.sqrt(x * x + y * y);
+
+  const tmin = parseFloat(tn.value);
+  const tmax = parseFloat(tx.value);
+  const pixel = ctx.getImageData(cx, cy, 1, 1);
+  const data = pixel.data;
+  const r = data[0];
+  const g = data[1];
+  const b = data[2];
+  let v = 510;
+  if (b > 0)
+    v = 255 - b + g;
+  else if (r > 0) 
+    v = 765 + r - g;
+  let t = tmin + v / 1020 * (tmax - tmin);
+  if (data[3] == 0)
+	t = 0;
+
+  mapx.textContent = cx.toFixed();
+  mapy.textContent = cy.toFixed();
+  mapr.textContent = d.toFixed(2);
+  mapv.textContent = t.toFixed(2);
+}
+
+canvas.addEventListener('mousemove', pick);
+btn.addEventListener('click', event => { compute(); });
+</script>
+
+</body>
+
+</html>
